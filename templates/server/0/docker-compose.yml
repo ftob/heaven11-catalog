@@ -4,8 +4,6 @@ server-php:
   stdin_open: true
   volumes_from:
     - server
-  links:
-    - server
   external_links:
     - ${RABBIT_HOST}:rabbit
   environment:
@@ -22,7 +20,6 @@ server-nginx:
     - server
   links:
     - server-php
-    - server
   labels:
     io.rancher.sidekicks: server
 
