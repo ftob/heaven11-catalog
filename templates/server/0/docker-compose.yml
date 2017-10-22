@@ -1,4 +1,4 @@
-server-php:
+php:
   image: quay.io/optionlift/php:latest
   tty: true
   stdin_open: true
@@ -19,9 +19,9 @@ server-nginx:
   volumes_from:
     - heaven-server
   links:
-    - server-php
+    - php
   labels:
-    io.rancher.sidekicks: server-php, heaven-server
+    io.rancher.sidekicks: php, heaven-server
 
 heaven-server:
   image: quay.io/optionlift/server:latest
