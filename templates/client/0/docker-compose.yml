@@ -1,38 +1,36 @@
-version: "3"
-services:
-  php:
-    build: ./php
-    tty: true
-    stdin_open: true
-    volumes_from:
-      - app
-    labels:
-      io.rancher.sidekicks: app
-    depends_on:
-      - app
-      - rabbit
-      - server
-    external_links:
-      - rabbit:${RABBIT_HOST}
-      - server:${HEAVEN11_SERVER}
-    environment:
-      RABBIT_PORT: ${RABBIT_PORT}
-      RABBIT_USER: ${RABBIT_USER}
-      RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
+php:
+  build: ./php
+  tty: true
+  stdin_open: true
+  volumes_from:
+    - app
+  labels:
+    io.rancher.sidekicks: app
+  depends_on:
+    - app
+    - rabbit
+    - server
+  external_links:
+    - rabbit:${RABBIT_HOST}
+    - server:${HEAVEN11_SERVER}
+  environment:
+    RABBIT_PORT: ${RABBIT_PORT}
+    RABBIT_USER: ${RABBIT_USER}
+    RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
 
-  nginx:
-    image: quay.io/optionlift/nginx
-    tty: true
-    stdin_open: true
-    labels:
-      io.rancher.sidekicks: app
-    volumes_from:
-      - app
-    depends_on:
-      - php
-      - app
+nginx:
+  image: quay.io/optionlift/nginx
+  tty: true
+  stdin_open: true
+  labels:
+    io.rancher.sidekicks: app
+  volumes_from:
+    - app
+  depends_on:
+    - php
+    - app
 
-  app:
-    image: quay.io/optionlift/client
-    labels:
-      io.rancher.container.pull_image: always
+app:
+  image: quay.io/optionlift/client
+  labels:
+    io.rancher.container.pull_image: always

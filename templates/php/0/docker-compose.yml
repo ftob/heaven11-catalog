@@ -1,6 +1,4 @@
-version: "3"
-services:
-  php:
-    image: quay.io/optionlift/php:latest
-    tty: true
-    stdin_open: true
+php:
+  image: quay.io/optionlift/php:latest
+  tty: true
+  stdin_open: true
