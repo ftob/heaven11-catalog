@@ -15,5 +15,3 @@ graylog:
   links:
     - mongo
     - elasticsearch
-  ports:
-    - "9000:9000"
