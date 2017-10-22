@@ -12,8 +12,11 @@ services:
       - app
       - rabbit
     external_links:
-      rabbit:${RABBIT_HOST}
-
+      - rabbit:${RABBIT_HOST}
+    environment:
+      RABBIT_PORT: ${RABBIT_PORT}
+      RABBIT_USER: ${RABBIT_USER}
+      RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
   nginx:
     image: quay.io/optionlift/nginx
     tty: true

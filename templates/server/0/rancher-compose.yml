@@ -5,3 +5,24 @@ catalog:
   description: "Heaven11 Server"
   uuid: server-0
   minimum_rancher_version: v0.9.0
+  questions:
+    - variable: RABBIT_HOST
+      description: "Rabbit server."
+      label: "External Service"
+      type: "service"
+      required: true
+    - variable: RABBIT_PORT
+      description: "Rabbit server port."
+      label: "Port rabbitmq"
+      type: "string"
+      default: "5672"
+    - variable: RABBIT_USER
+      description: "Rabbit server user."
+      label: "User rabbitmq"
+      type: "string"
+      default: "guest"
+    - variable: RABBIT_PASSWORD
+      description: "Rabbit server password."
+      label: "Password rabbitmq"
+      type: "string"
+      default: "guest"

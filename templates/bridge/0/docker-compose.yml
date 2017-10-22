@@ -6,16 +6,16 @@ services:
       - graylog
       - rabbit
     environment:
-      - RABBIT_HOST=rabbit
-      - RABBIT_PORT=${RABBIT_PORT}
-      - RABBIT_USER=${RABBIT_USER}
-      - RABBIT_PASSWORD=${RABBIT_PASSWORD}
-      - RABBIT_QUEUE=${RABBIT_QUEUE}
-      - GRAYLOG_HOST=graylog
-      - GRAYLOG_PORT=${GRAYLOG_PORT}
+      RABBIT_HOST: rabbit
+      RABBIT_PORT: ${RABBIT_PORT}
+      RABBIT_USER: ${RABBIT_USER}
+      RABBIT_PASSWORD: ${RABBIT_PASSWORD}
+      RABBIT_QUEUE: ${RABBIT_QUEUE}
+      GRAYLOG_HOST: graylog
+      GRAYLOG_PORT: ${GRAYLOG_PORT}
     external_links:
-      rabbit:${RABBIT_HOST}
-      graylog:${GRAYLOG_HOST}
+      - rabbit:${RABBIT_HOST}
+      - graylog:${GRAYLOG_HOST}
     stdin_open: true
     tty: true
     labels:
