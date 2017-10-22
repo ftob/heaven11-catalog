@@ -1,0 +1,5 @@
+name: Zabbix
+description: |
+  Zabbix server
+version: 0.8-rancher1
+category: Heaven11
