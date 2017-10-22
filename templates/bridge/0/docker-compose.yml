@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    image: quay.io/optionlift/bridge
+    depends_on:
+      - graylog
+      - rabbit
+    environment:
+      - RABBIT_HOST=rabbit
+      - RABBIT_PORT=5672
+      - RABBIT_USER=guest
+      - RABBIT_PASSWORD=guest
+      - RABBIT_QUEUE=logs
+      - GRAYLOG_HOST=graylog
+      - GRAYLOG_PORT=12201
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.sidekicks: app
+      io.rancher.container.pull_image: always

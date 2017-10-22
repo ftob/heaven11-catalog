@@ -1,32 +1,32 @@
-version: "3.3"
+version: "3"
 services:
   php:
-    container_name: quay.io/optionlift/php
-    build: ./docker/php/
+    build: ./php
     tty: true
     stdin_open: true
-    volumes:
-      - app:/opt/app
-    networks:
-       - overlay
-    depends_on:
-      - php
+    volumes_from:
       - app
+    labels:
+      io.rancher.sidekicks: app
+    depends_on:
+      - app
+      - rabbit
+    external_links:
+      rabbit:${RABBIT_HOST}
 
   nginx:
     image: quay.io/optionlift/nginx
     tty: true
     stdin_open: true
-    ports:
-      - "80:80"
-    volumes:
-      - app:/opt/app
+    labels:
+      io.rancher.sidekicks: app
+    volumes_from:
+      - app
     depends_on:
       - php
       - app
-    networks:
-       - overlay
 
   app:
     image: quay.io/optionlift/server
-    networks: none
+    labels:
+      io.rancher.container.pull_image: always

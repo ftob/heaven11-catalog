@@ -1,0 +1,6 @@
+.catalog:
+  name: "Nginx"
+  version: "v0.0.1"
+  description: "Nginx Heaven11 server"
+  uuid: nginx-0
+  minimum_rancher_version: v0.9.0
