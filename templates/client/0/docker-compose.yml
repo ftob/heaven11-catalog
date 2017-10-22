@@ -1,5 +1,5 @@
 php:
-  image: quay.io/optionlift/server:latest
+  image: quay.io/optionlift/php:latest
   tty: true
   stdin_open: true
   volumes_from:
