@@ -32,3 +32,4 @@ app:
   image: quay.io/optionlift/client
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.container.start_once: 'true'
