@@ -8,8 +8,6 @@ php:
     io.rancher.sidekicks: app
   links:
     - app
-    - rabbit
-    - server
   external_links:
     - ${RABBIT_HOST}:rabbit
     - ${HEAVEN11_SERVER}:server
