@@ -1,28 +1,30 @@
-php:
+server-php:
   image: quay.io/optionlift/php:latest
   tty: true
   stdin_open: true
   volumes_from:
-    - app
+    - server
   links:
-    - app
+    - server
   external_links:
     - ${RABBIT_HOST}:rabbit
   environment:
     RABBIT_PORT: ${RABBIT_PORT}
     RABBIT_USER: ${RABBIT_USER}
     RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
-nginx:
+server-nginx:
   image: quay.io/optionlift/nginx
   tty: true
   stdin_open: true
   volumes_from:
     - app
   links:
-    - php
-    - app
+    - server-php
+    - server
 
-app:
+server:
   image: quay.io/optionlift/server:latest
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.sidekicks: php, nginx
+    io.rancher.container.start_once: 'true'
