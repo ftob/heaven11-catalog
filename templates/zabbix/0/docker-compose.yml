@@ -40,7 +40,7 @@ zabbix-server:
    com.zabbix.dbtype: "pgsql"
    com.zabbix.os: "alpine"
 
- zabbix-proxy-sqlite3:
+zabbix-proxy-sqlite3:
   image: zabbix/zabbix-proxy-sqlite3:alpine-3.4-latest
   ports:
    - "10061:10051"
@@ -230,7 +230,7 @@ zabbix-java-gateway:
    com.zabbix.component: "java-gateway"
    com.zabbix.os: "alpine"
 
- zabbix-snmptraps:
+zabbix-snmptraps:
   image: zabbix/zabbix-snmptraps:ubuntu-3.4-latest
   ports:
    - "162:162/udp"
@@ -277,10 +277,10 @@ postgres-server:
      - pgsql-server
      - pgsql-database
 
- db_data_mysql:
+db_data_mysql:
     image: busybox
     volumes:
-    - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+      - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
 
  db_data_pgsql:
     image: busybox
