@@ -1,5 +1,5 @@
 php:
-  build: ./php
+  image: quay.io/optionlift/server:latest
   tty: true
   stdin_open: true
   volumes_from:
@@ -17,7 +17,7 @@ php:
     RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
 
 nginx:
-  image: quay.io/optionlift/nginx
+  image: quay.io/optionlift/nginx:latest
   tty: true
   stdin_open: true
   labels:
