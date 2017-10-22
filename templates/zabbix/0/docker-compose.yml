@@ -285,7 +285,7 @@ db_data_mysql:
 db_data_pgsql:
     image: busybox
     volumes:
-    - ./zbx_env/var/lib/postgresql/data:/var/lib/postgresql/data:rw
+      - ./zbx_env/var/lib/postgresql/data:/var/lib/postgresql/data:rw
 
 networks:
   zbx_net:
