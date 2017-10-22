@@ -21,7 +21,7 @@ server-nginx:
   links:
     - server-php
   labels:
-    io.rancher.sidekicks: server-php, heaven-php
+    io.rancher.sidekicks: server-php, heaven-server
 
 heaven-server:
   image: quay.io/optionlift/server:latest
