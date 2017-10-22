@@ -4,8 +4,6 @@ php:
   stdin_open: true
   volumes_from:
     - app
-  labels:
-    io.rancher.sidekicks: app
   links:
     - app
   external_links:
@@ -18,8 +16,6 @@ nginx:
   image: quay.io/optionlift/nginx
   tty: true
   stdin_open: true
-  labels:
-    io.rancher.sidekicks: app
   volumes_from:
     - app
   links:

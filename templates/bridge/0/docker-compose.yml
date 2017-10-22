@@ -13,8 +13,8 @@ app:
     GRAYLOG_HOST: graylog
     GRAYLOG_PORT: ${GRAYLOG_PORT}
   external_links:
-    - rabbit:${RABBIT_HOST}
-    - graylog:${GRAYLOG_HOST}
+    - ${RABBIT_HOST}:rabbit
+    - ${GRAYLOG_HOST}:graylog
   stdin_open: true
   tty: true
   labels:
