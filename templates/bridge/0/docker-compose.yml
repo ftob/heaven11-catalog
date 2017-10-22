@@ -15,5 +15,4 @@ app:
   stdin_open: true
   tty: true
   labels:
-    io.rancher.sidekicks: app
     io.rancher.container.pull_image: always
