@@ -6,12 +6,12 @@ catalog:
   uuid: bridge-0
   minimum_rancher_version: v0.9.0
   questions:
-    - variable: GRQYLOG_HOST
+    - variable: GRAYLOG_HOST
       description: "Graylog server."
       label: "External Service"
       type: "service"
       required: true
-    - variable: GRQYLOG_PORT
+    - variable: GRAYLOG_PORT
       description: "Graylog port."
       label: "Port graylog"
       type: "string"
