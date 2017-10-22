@@ -16,3 +16,18 @@ catalog:
       label: "External Service"
       type: "service"
       required: true
+    - variable: RABBIT_PORT
+      description: "Rabbit server port."
+      label: "Port rabbitmq"
+      type: "string"
+      default: "5672"
+    - variable: RABBIT_USER
+      description: "Rabbit server user."
+      label: "User rabbitmq"
+      type: "string"
+      default: "guest"
+    - variable: RABBIT_PASSWORD
+      description: "Rabbit server password."
+      label: "Password rabbitmq"
+      type: "string"
+      default: "guest"
