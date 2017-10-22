@@ -8,7 +8,6 @@ php:
     io.rancher.sidekicks: app
   links:
     - app
-    - rabbit
   external_links:
     - ${RABBIT_HOST}:rabbit
   environment:
@@ -28,6 +27,6 @@ nginx:
     - app
 
 app:
-  image: quay.io/optionlift/server
+  image: quay.io/optionlift/server:latest
   labels:
     io.rancher.container.pull_image: always
