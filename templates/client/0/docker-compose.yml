@@ -6,8 +6,6 @@ php:
     - app
   labels:
     io.rancher.sidekicks: app
-  links:
-    - app
   external_links:
     - ${RABBIT_HOST}:rabbit
     - ${HEAVEN11_SERVER}:server
@@ -21,15 +19,14 @@ nginx:
   tty: true
   stdin_open: true
   labels:
-    io.rancher.sidekicks: app
+    io.rancher.sidekicks: app, php
   volumes_from:
     - app
   links:
     - php
-    - app
 
 app:
-  image: quay.io/optionlift/client
+  image: quay.io/optionlift/client:latest
   labels:
     io.rancher.container.pull_image: always
     io.rancher.container.start_once: 'true'
