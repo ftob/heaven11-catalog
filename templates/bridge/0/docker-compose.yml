@@ -1,7 +1,7 @@
 
 app:
   image: quay.io/optionlift/bridge
-  depends_on:
+  links:
     - graylog
     - rabbit
   environment:

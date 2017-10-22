@@ -6,11 +6,11 @@ php:
     - app
   labels:
     io.rancher.sidekicks: app
-  depends_on:
+  links:
     - app
     - rabbit
   external_links:
-    - rabbit:${RABBIT_HOST}
+    - ${RABBIT_HOST}:rabbit
   environment:
     RABBIT_PORT: ${RABBIT_PORT}
     RABBIT_USER: ${RABBIT_USER}

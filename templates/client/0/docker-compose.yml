@@ -6,13 +6,13 @@ php:
     - app
   labels:
     io.rancher.sidekicks: app
-  depends_on:
+  links:
     - app
     - rabbit
     - server
   external_links:
-    - rabbit:${RABBIT_HOST}
-    - server:${HEAVEN11_SERVER}
+    - ${RABBIT_HOST}:rabbit
+    - ${HEAVEN11_SERVER}:server
   environment:
     RABBIT_PORT: ${RABBIT_PORT}
     RABBIT_USER: ${RABBIT_USER}
@@ -26,7 +26,7 @@ nginx:
     io.rancher.sidekicks: app
   volumes_from:
     - app
-  depends_on:
+  links:
     - php
     - app
 
