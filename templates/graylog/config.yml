@@ -1,0 +1,5 @@
+name: Graylog
+description: |
+  Graylog server
+version: 0.8-rancher1
+category: Heaven11
