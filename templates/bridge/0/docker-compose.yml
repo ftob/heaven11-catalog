@@ -1,23 +1,22 @@
-version: "3"
-services:
-  app:
-    image: quay.io/optionlift/bridge
-    depends_on:
-      - graylog
-      - rabbit
-    environment:
-      RABBIT_HOST: rabbit
-      RABBIT_PORT: ${RABBIT_PORT}
-      RABBIT_USER: ${RABBIT_USER}
-      RABBIT_PASSWORD: ${RABBIT_PASSWORD}
-      RABBIT_QUEUE: ${RABBIT_QUEUE}
-      GRAYLOG_HOST: graylog
-      GRAYLOG_PORT: ${GRAYLOG_PORT}
-    external_links:
-      - rabbit:${RABBIT_HOST}
-      - graylog:${GRAYLOG_HOST}
-    stdin_open: true
-    tty: true
-    labels:
-      io.rancher.sidekicks: app
-      io.rancher.container.pull_image: always
+
+app:
+  image: quay.io/optionlift/bridge
+  depends_on:
+    - graylog
+    - rabbit
+  environment:
+    RABBIT_HOST: rabbit
+    RABBIT_PORT: ${RABBIT_PORT}
+    RABBIT_USER: ${RABBIT_USER}
+    RABBIT_PASSWORD: ${RABBIT_PASSWORD}
+    RABBIT_QUEUE: ${RABBIT_QUEUE}
+    GRAYLOG_HOST: graylog
+    GRAYLOG_PORT: ${GRAYLOG_PORT}
+  external_links:
+    - rabbit:${RABBIT_HOST}
+    - graylog:${GRAYLOG_HOST}
+  stdin_open: true
+  tty: true
+  labels:
+    io.rancher.sidekicks: app
+    io.rancher.container.pull_image: always
