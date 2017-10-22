@@ -1,10 +1,10 @@
-
 mongo:
   image: "mongo:3"
 
 elasticsearch:
   image: "elasticsearch:2"
   command: "elasticsearch -Des.cluster.name='graylog'"
+
 
 graylog:
   image: graylog2/server:2.1.1-1
@@ -15,7 +15,3 @@ graylog:
   links:
     - mongo
     - elasticsearch
-  labels:
-    io.rancher.scheduler.global: 'true'
-    io.rancher.container.hostname_override: container_name
-    io.rancher.container.start_once: 'true'
