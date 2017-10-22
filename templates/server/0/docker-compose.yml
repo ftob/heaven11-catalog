@@ -23,7 +23,7 @@ nginx:
     io.rancher.sidekicks: app
   volumes_from:
     - app
-  depends_on:
+  links:
     - php
     - app
 
