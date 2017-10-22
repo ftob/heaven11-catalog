@@ -1,0 +1,1 @@
+## Bridge RabbitMQ to GrayLog

@@ -1,0 +1,17 @@
+.catalog:
+  name: "Client"
+  version: "v0.0.1"
+  description: "Client Heaven11 server"
+  uuid: client-0
+  minimum_rancher_version: v0.9.0
+  questions:
+    - variable: RABBIT_HOST
+      description: "Rabbit server."
+      label: "External Service"
+      type: "service"
+      required: true
+    - variable: HEAVEN11_SERVER
+      description: "Heaven server."
+      label: "External Service"
+      type: "service"
+      required: true

@@ -1,0 +1,42 @@
+.catalog:
+  name: "Bridge"
+  version: "v0.0.1"
+  description: "Bridge amqp 2 graylog"
+  uuid: bridge-0
+  minimum_rancher_version: v0.9.0
+  questions:
+    - variable: GRQYLOG_HOST
+      description: "Graylog server."
+      label: "External Service"
+      type: "service"
+      required: true
+    - variable: GRQYLOG_PORT
+      description: "Graylog port."
+      label: "Port graylog"
+      type: "string"
+      default: "12201"
+    - variable: RABBIT_HOST
+      description: "Rabbit server."
+      label: "External Service"
+      type: "service"
+      required: true
+    - variable: RABBIT_PORT
+      description: "Rabbit server port."
+      label: "Port rabbitmq"
+      type: "string"
+      default: "5672"
+    - variable: RABBIT_USER
+      description: "Rabbit server user."
+      label: "User rabbitmq"
+      type: "string"
+      default: "guest"
+    - variable: RABBIT_PASSWORD
+      description: "Rabbit server password."
+      label: "Password rabbitmq"
+      type: "string"
+      default: "guest"
+    - variable: RABBIT_QUEUE
+      description: "Rabbit queue."
+      label: "Queue rabbitmq"
+      type: "string"
+      default: "logs"
