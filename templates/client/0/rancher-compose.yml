@@ -1,4 +1,5 @@
-.catalog:
+version: '2'
+catalog:
   name: "Client"
   version: "v0.0.1"
   description: "Client Heaven11 server"
