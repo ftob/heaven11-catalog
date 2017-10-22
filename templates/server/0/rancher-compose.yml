@@ -1,9 +1,9 @@
 version: '2'
 catalog:
-  name: "Server"
+  name: "HeavenServer"
   version: "v0.0.1"
   description: "Heaven11 Server"
-  uuid: server-0
+  uuid: heavenserver-0
   minimum_rancher_version: v0.9.0
   questions:
     - variable: RABBIT_HOST

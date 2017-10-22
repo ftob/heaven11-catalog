@@ -1,9 +1,6 @@
 
 app:
   image: quay.io/optionlift/bridge
-  links:
-    - graylog
-    - rabbit
   environment:
     RABBIT_HOST: rabbit
     RABBIT_PORT: ${RABBIT_PORT}
