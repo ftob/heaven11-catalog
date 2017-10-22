@@ -12,4 +12,4 @@ then
 fi
 
 # Start php-fpm
-php-fpm --allow-to-run-as-root
+cd /opt/app && composer install && php-fpm --allow-to-run-as-root
