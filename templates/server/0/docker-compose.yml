@@ -12,6 +12,8 @@ server-php:
     RABBIT_PORT: ${RABBIT_PORT}
     RABBIT_USER: ${RABBIT_USER}
     RABBIT_PASSWORD: ${RABBBIT_PASSWORD}
+  labels:
+    io.rancher.sidekicks: php, nginx
 server-nginx:
   image: quay.io/optionlift/nginx
   tty: true
@@ -21,9 +23,8 @@ server-nginx:
   links:
     - server-php
     - server
+  labels:
+    io.rancher.sidekicks: server
 
 server:
   image: quay.io/optionlift/server:latest
-  labels:
-    io.rancher.sidekicks: php, nginx
-    io.rancher.container.start_once: 'true'
