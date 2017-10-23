@@ -15,6 +15,8 @@ php:
 server-nginx:
   image: quay.io/optionlift/nginx
   tty: true
+  external_links:
+    - ${RABBIT_HOST}:rabbit
   stdin_open: true
   volumes_from:
     - heaven-server

@@ -18,6 +18,9 @@ nginx:
   image: quay.io/optionlift/nginx:latest
   tty: true
   stdin_open: true
+  external_links:
+    - ${RABBIT_HOST}:rabbit
+    - ${HEAVEN11_SERVER}:server
   labels:
     io.rancher.sidekicks: app, php
   volumes_from:
